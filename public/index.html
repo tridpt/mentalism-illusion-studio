@@ -1,0 +1,1214 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ArcanaMind 🎩✨ — Sân Khấu Ảo Thuật Toán Học, Đọc Vị &amp; Ảo Giác Thị Giác (Port 4155)</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&family=Cinzel:wght@600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+  <div class="theater-shell" id="app-root">
+    <!-- =================================================================== -->
+    <!-- 1. TOP STAGE HEADER                                                 -->
+    <!-- =================================================================== -->
+    <header class="stage-header">
+      <div class="brand-cluster">
+        <div class="brand-emblem" aria-hidden="true">
+          <svg width="34" height="34" viewBox="0 0 36 36" fill="none">
+            <circle cx="18" cy="18" r="16" stroke="url(#arcanaGold)" stroke-width="1.5" stroke-dasharray="3.5 2.2" />
+            <polygon points="18,4 30,11 30,25 18,32 6,25 6,11" fill="rgba(245,196,81,0.1)" stroke="url(#arcanaGold)" stroke-width="1.4" />
+            <path d="M9.5 18C12 13.2 15.2 11.5 18 11.5C20.8 11.5 24 13.2 26.5 18C24 22.8 20.8 24.5 18 24.5C15.2 24.5 12 22.8 9.5 18Z" stroke="#FEF08A" stroke-width="1.7" />
+            <circle cx="18" cy="18" r="3.2" fill="#F5C451" />
+            <defs>
+              <linearGradient id="arcanaGold" x1="3" y1="3" x2="33" y2="33" gradientUnits="userSpaceOnUse">
+                <stop offset="0%" stop-color="#FEF08A" />
+                <stop offset="50%" stop-color="#F5C451" />
+                <stop offset="100%" stop-color="#B45309" />
+              </linearGradient>
+            </defs>
+          </svg>
+        </div>
+        <div class="brand-titles">
+          <div class="brand-eyebrow">GRAND MATHEMATICAL MENTALISM &amp; CORTEX LAB</div>
+          <h1>ArcanaMind <span class="port-badge">Port 4155</span></h1>
+        </div>
+      </div>
+
+      <!-- GLOBAL TELEMETRY PILLS -->
+      <div class="header-metrics">
+        <div class="metric-pill" title="Chuỗi giải mã 5 lá bài nhanh nhất">
+          <span class="m-label">Kỷ lục Pháp sư:</span>
+          <strong id="hdr-streak">0</strong>
+        </div>
+        <div class="metric-pill" title="Độ kháng ảo giác thị giác trung bình">
+          <span class="m-label">Kháng Ảo Giác:</span>
+          <strong id="hdr-immunity">96.4%</strong>
+        </div>
+        <div class="metric-pill cyan-pill" id="live-room-indicator" hidden>
+          <span class="pulse-dot"></span>
+          <span class="m-label">Phòng Live:</span>
+          <strong id="hdr-room-code">----</strong>
+        </div>
+      </div>
+
+      <!-- GLOBAL STAGE UTILITIES -->
+      <div class="header-actions">
+        <button id="btn-xray-global" class="action-chip xray-toggle" type="button" title="Bật/Tắt chế độ Lật tẩy Nguyên lý Toán học &amp; Quang học (Phím X)">
+          <span class="chip-icon">🔦</span>
+          <span>Lật Tẩy Nguyên Lý (X-Ray)</span>
+          <span class="xray-state-tag" id="xray-state-label">TẮT</span>
+        </button>
+        <button id="btn-live-stage" class="action-chip" type="button" title="Tạo phòng biểu diễn thần giao cách cảm 2 thiết bị thời gian thực">
+          <span class="chip-icon">📡</span>
+          <span>Sân Khấu Đôi</span>
+        </button>
+        <button id="btn-hall-records" class="action-chip" type="button" title="Xem Bảng Vinh Danh &amp; Nhật Ký Tiên Tri SQLite">
+          <span class="chip-icon">🏆</span>
+          <span>Kỷ Lục</span>
+        </button>
+        <button id="btn-audio-toggle" class="action-chip active" type="button" title="Bật/Tắt hiệu ứng âm thanh sân khấu">
+          <span class="chip-icon" id="audio-icon">🔊</span>
+          <span>Âm</span>
+        </button>
+        <button id="btn-guide-modal" class="action-chip gold-outline" type="button" title="Hướng dẫn trải nghiệm &amp; Bí quyết đem đi biểu diễn">
+          <span class="chip-icon">🎩</span>
+          <span>Bí Kíp</span>
+        </button>
+      </div>
+    </header>
+
+    <!-- =================================================================== -->
+    <!-- 2. FIVE-ACT STAGE NAVIGATION                                        -->
+    <!-- =================================================================== -->
+    <nav class="act-nav" aria-label="5 Màn Trình Diễn">
+      <button class="act-tab active" data-act="act-hamming" type="button">
+        <span class="act-num">MÀN I</span>
+        <span class="act-title">🔮 Đọc Suy Nghĩ &amp; Bắt Nói Dối</span>
+        <span class="act-sub">Mã sửa lỗi Hamming · Đoán ngày sinh</span>
+      </button>
+      <button class="act-tab" data-act="act-fitch" type="button">
+        <span class="act-num">MÀN II</span>
+        <span class="act-title">🃏 Thần Giao 5 Lá Bài</span>
+        <span class="act-sub">Fitch Cheney 52 Lá · Đấu trí &amp; Luyện nghề</span>
+      </button>
+      <button class="act-tab" data-act="act-kruskal" type="button">
+        <span class="act-num">MÀN III</span>
+        <span class="act-title">📜 Hố Đen Kruskal &amp; Ma Phương</span>
+        <span class="act-sub">Hội tụ Markov · Niêm phong SHA-256</span>
+      </button>
+      <button class="act-tab" data-act="act-scanimation" type="button">
+        <span class="act-num">MÀN IV</span>
+        <span class="act-title">🎞️ Xưởng Ảo Giác Moiré / Scanimation</span>
+        <span class="act-sub">Khung sọc chuyển động &amp; Xuất bản in</span>
+      </button>
+      <button class="act-tab" data-act="act-cortex" type="button">
+        <span class="act-num">MÀN V</span>
+        <span class="act-title">👁️ Đánh Lừa Não Bộ &amp; Shepard Tone</span>
+        <span class="act-sub">4 Ảo giác võng mạc · Âm vô tận · Đo sai số</span>
+      </button>
+      <button class="act-tab" data-act="act-hybrid" type="button">
+        <span class="act-num">MÀN VI • v2.0</span>
+        <span class="act-title">🖼️ Tranh Lai Tần Số &amp; 3D Ẩn</span>
+        <span class="act-sub">Gần hình A · Lùi xa 3m biến thành B · Stereogram</span>
+      </button>
+      <button class="act-tab" data-act="act-paradox" type="button">
+        <span class="act-num">MÀN VII • v2.0</span>
+        <span class="act-title">🎰 Sòng Bài Nghịch Lý &amp; Tráo Bài</span>
+        <span class="act-sub">Parrondo (Thua+Thua=Thắng) · Gilbreath · Faro</span>
+      </button>
+      <button class="act-tab" data-act="act-polygraph" type="button">
+        <span class="act-num">MÀN VIII • v2.0</span>
+        <span class="act-title">🧠 Đọc Độ Trễ Phản Xạ Vi Mô</span>
+        <span class="act-sub">CIT-RT 0.1ms · Bắt thóp vật giấu trong đầu</span>
+      </button>
+    </nav>
+
+    <!-- =================================================================== -->
+    <!-- 3. MAIN STAGE WORKSPACE                                             -->
+    <!-- =================================================================== -->
+    <main class="stage-main">
+
+      <!-- ================================================================= -->
+      <!-- ACT I: HAMMING LIE-DETECTING MIND READER                          -->
+      <!-- ================================================================= -->
+      <section class="act-panel active" id="act-hamming">
+        <div class="panel-hero">
+          <div>
+            <span class="eyebrow-tag">ACT I • RICHARD HAMMING ERROR-CORRECTING TELEPATHY</span>
+            <h2>Đọc Vị Con Số Trong Đầu &amp; Máy Phát Hiện Nói Dối</h2>
+            <p>
+              Nghĩ thầm 1 con số trong đầu — <strong>tuyệt đối không gõ vào máy</strong>. Với mỗi lá bài Tarot bên dưới, hãy trả lời con số đó có xuất hiện hay không.
+              Đặc biệt: <strong>Bạn được quyền CỐ TÌNH NÓI DỐI tối đa 1 câu bất kỳ</strong> để đánh lừa Pháp sư!
+            </p>
+          </div>
+          <div class="hero-controls">
+            <div class="segmented-switch" role="group" aria-label="Chế độ đọc vị">
+              <button class="seg-btn active" data-hamming-mode="classic_15" type="button">Cổ Điển 1–15 (7 Lá)</button>
+              <button class="seg-btn" data-hamming-mode="birthday_31" type="button">Ngày Sinh 1–31 (9 Lá)</button>
+            </div>
+            <button class="btn-secondary" id="btn-hamming-reset" type="button">🔄 Làm Mới Ván</button>
+          </div>
+        </div>
+
+        <div class="two-col-stage">
+          <!-- LEFT: TAROT INTERROGATION DECK -->
+          <div class="stage-card spotlight-card">
+            <div class="card-header-row">
+              <div>
+                <h3 id="hamming-mode-heading">Bộ 7 Lá Bài Tarot Nhị Phân (1 – 15)</h3>
+                <p class="muted-note">Bấm <strong>CÓ</strong> hoặc <strong>KHÔNG</strong> trên từng lá bài (có thể sửa lại bất kỳ lá nào trước khi phán quyết).</p>
+              </div>
+              <div class="progress-counter">
+                Đã trả lời: <strong id="hamming-answered-count">0/7</strong>
+              </div>
+            </div>
+
+            <div class="tarot-cards-grid" id="hamming-cards-container">
+              <!-- Populated dynamically -->
+            </div>
+
+            <div class="stage-cta-bar">
+              <input type="text" id="hamming-player-name" class="stage-input compact-input" placeholder="Tên khán giả (tùy chọn)" maxlength="32" />
+              <button class="btn-gold-primary large-cta" id="btn-hamming-solve" type="button" disabled>
+                ⚡ Đọc Suy Nghĩ &amp; Vạch Trần Lời Nói Dối
+              </button>
+            </div>
+          </div>
+
+          <!-- RIGHT: ORACLE REVEAL + X-RAY SYNDROME -->
+          <div class="stage-side-stack">
+            <div class="stage-card verdict-card" id="hamming-verdict-box">
+              <div class="oracle-placeholder" id="hamming-placeholder">
+                <div class="crystal-orb">🔮</div>
+                <h4>Quả Cầu Tiên Tri Đang Chờ Tín Hiệu</h4>
+                <p>Hãy giữ kín con số trong tâm trí, trả lời hết các lá bài bên trái (nhớ thử nói dối 1 câu xem máy có bắt thóp được không!).</p>
+              </div>
+
+              <div class="oracle-result" id="hamming-result" hidden>
+                <span class="reveal-badge" id="hamming-lie-badge">PHÁN QUYẾT TÂM TRÍ</span>
+                <div class="giant-number-reveal" id="hamming-secret-number">?</div>
+                <h3 id="hamming-verdict-title">--</h3>
+                <p id="hamming-verdict-detail" class="verdict-desc">--</p>
+              </div>
+            </div>
+
+            <!-- X-RAY PANEL FOR ACT I -->
+            <div class="stage-card xray-panel" id="xray-hamming">
+              <div class="xray-header">
+                <span>🔦 HẬU TRƯỜNG TOÁN HỌC: MA TRẬN KIỂM TRA CHẴN LẺ H &amp; SYNDROME</span>
+                <span class="mono-tag">H · rᵀ (mod 2)</span>
+              </div>
+              <p class="xray-explain">
+                Mỗi câu trả lời tạo thành 1 bit trong vector thu nhận <code>r</code>. Thay vì chỉ hỏi các bit nhị phân thuần túy (dễ bị sai lệch hoàn toàn nếu bạn nói dối), hệ thống nhúng thêm các <strong>Lá bài Kiểm tra Chẵn lẻ (Parity Cards)</strong> sao cho khoảng cách Hamming tối thiểu <code>d_min ≥ 3</code>. Khi nhân ma trận <code>H</code> với <code>r</code> theo phép XOR (⊕), vector dư <strong>Syndrome</strong> sẽ chỉ đích danh cột chứa bit bị nói dối!
+              </p>
+              <div id="hamming-xray-matrix-wrap" class="xray-matrix-box">
+                <!-- Matrix H & live XOR equations rendered here -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================================================================= -->
+      <!-- ACT II: FITCH CHENEY'S 5-CARD TELEPATHY                           -->
+      <!-- ================================================================= -->
+      <section class="act-panel" id="act-fitch">
+        <div class="panel-hero">
+          <div>
+            <span class="eyebrow-tag">ACT II • FITCH CHENEY (1950) PIGEONHOLE &amp; MODULAR ARITHMETIC</span>
+            <h2>Mật Mã Thần Giao Cách Cảm 5 Lá Bài</h2>
+            <p>
+              Rút <strong>5 lá bài bất kỳ</strong> từ bộ bài Tây 52 lá. Trợ lý <strong>Luna</strong> sẽ úp kín 1 lá và chỉ xếp ngửa 4 lá còn lại lên bàn.
+              Pháp sư <strong>Orion</strong> (hoàn toàn không được phép nhìn lá úp!) sẽ đọc chính xác cả Số lẫn Chất của lá bài ẩn trong tích tắc!
+            </p>
+          </div>
+          <div class="hero-controls">
+            <div class="segmented-switch">
+              <button class="seg-btn active" data-fitch-mode="spectator" type="button">🎭 Khán Giả Thách Đố AI</button>
+              <button class="seg-btn" data-fitch-mode="trainer" type="button">🎓 Luyện Nghề Pháp Sư (Đua Tốc Độ)</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- SUBMODE A: SPECTATOR CHALLENGES AI -->
+        <div id="fitch-spectator-view" class="two-col-stage">
+          <div class="stage-card">
+            <div class="card-header-row">
+              <div>
+                <h3>Bước 1: Rút 5 Lá Bài Tự Do Từ Bộ 52 Lá</h3>
+                <p class="muted-note">Không ép bài (Zero Force) — bạn toàn quyền chọn bất kỳ 5 lá nào muốn thử thách.</p>
+              </div>
+              <div class="inline-btns">
+                <button class="btn-secondary small-btn" id="btn-fitch-random5" type="button">🎲 Rút Ngẫu Nhiên 5 Lá</button>
+                <button class="btn-ghost small-btn" id="btn-fitch-clear5" type="button">Xóa Chọn</button>
+              </div>
+            </div>
+
+            <div class="deck-picker-status">
+              <span>Đã chọn: <strong id="fitch-picked-count">0 / 5</strong> lá</span>
+              <div id="fitch-selected-pills" class="selected-card-pills"></div>
+            </div>
+
+            <div id="fitch-full-deck-grid" class="full-deck-picker">
+              <!-- 52 cards grouped in 4 suit rows -->
+            </div>
+
+            <div class="stage-cta-bar">
+              <button class="btn-gold-primary" id="btn-fitch-encode" type="button" disabled>
+                ✨ Giao 5 Lá Cho Trợ Lý Luna Xếp Bài
+              </button>
+            </div>
+          </div>
+
+          <div class="stage-side-stack">
+            <div class="stage-card velvet-table-card">
+              <h3>Bước 2: Bàn Nhung Biểu Diễn Của Luna &amp; Orion</h3>
+              <p class="muted-note">Luna đặt 4 lá ngửa theo mật ước hoán vị và giấu lá thứ 5 vào phong ấn.</p>
+
+              <div class="velvet-slots" id="fitch-table-slots">
+                <div class="empty-velvet-msg">Hãy chọn đủ 5 lá bài bên trái hoặc bấm "Rút Ngẫu Nhiên 5 Lá" để bắt đầu màn diễn.</div>
+              </div>
+
+              <div class="stage-cta-bar center-bar">
+                <button class="btn-cyan-glow" id="btn-fitch-blind-decode" type="button" disabled>
+                  🎩 Gọi Pháp Sư Orion Giải Mã Mù (Chỉ Gửi 4 Lá Ngửa!)
+                </button>
+              </div>
+
+              <div id="fitch-decode-banner" class="decode-announcement" hidden></div>
+            </div>
+
+            <!-- X-RAY PANEL FOR ACT II -->
+            <div class="stage-card xray-panel" id="xray-fitch">
+              <div class="xray-header">
+                <span>🔦 HẬU TRƯỜNG TOÁN HỌC: CHUỒNG BỒ CÂU + ĐỒNG HỒ MOD 13 + HOÁN VỊ 3!</span>
+                <span class="mono-tag">C(52,5) = 2,598,960</span>
+              </div>
+              <div id="fitch-xray-content" class="xray-body-grid">
+                <p class="xray-explain">
+                  1) <strong>Nguyên lý Dirichlet</strong>: Có 5 lá mà chỉ có 4 chất (♣ ♦ ♥ ♠) ⇒ luôn có ít nhất 2 lá <em>cùng chất</em>.<br/>
+                  2) <strong>Vòng tròn Mod 13</strong>: Giữa 2 lá bất kỳ trên mặt đồng hồ 13 số (A..K), luôn có một chiều kim đồng hồ cách nhau từ <strong>+1 đến +6 bước</strong>. Luna đặt lá gốc ở vị trí #1 và úp lá đích!<br/>
+                  3) <strong>Hoán vị 3! = 6</strong>: 3 lá còn lại được phân hạng Thấp (L) &lt; Trung (M) &lt; Cao (H). Sắp xếp thứ tự của chúng truyền chính xác con số +1..+6 cho Pháp sư!
+                </p>
+                <div id="fitch-clock-svg-wrap" class="clock-svg-box"></div>
+                <div id="fitch-steps-trace" class="steps-trace-list"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- SUBMODE B: MAGICIAN SPEED TRAINER -->
+        <div id="fitch-trainer-view" class="stage-card" hidden>
+          <div class="card-header-row">
+            <div>
+              <h3>🎓 Phòng Luyện Phản Xạ Pháp Sư — Giải Mã 4 Lá Bài Tốc Độ Cao</h3>
+              <p class="muted-note">Trợ lý Luna vừa xếp 4 lá bài ngửa lên bàn. Hãy tính nhẩm chất và bậc của lá bài ẩn thứ 5 nhanh nhất có thể!</p>
+            </div>
+            <div class="trainer-stats-row">
+              <span class="stat-box">Chuỗi thắng: <strong id="trainer-streak">0</strong></span>
+              <span class="stat-box">Đồng hồ: <strong id="trainer-timer">0.0s</strong></span>
+              <button class="btn-gold-primary small-btn" id="btn-trainer-deal" type="button">🃏 Chia Ván Mới</button>
+            </div>
+          </div>
+
+          <div class="trainer-arena">
+            <div class="trainer-cards-row" id="trainer-four-cards"></div>
+
+            <div class="trainer-guess-controls">
+              <div class="guess-group">
+                <label>1. Chọn Chất Của Lá Ẩn (Nhìn Lá #1):</label>
+                <div class="suit-btn-row" id="trainer-suit-btns">
+                  <button type="button" class="suit-pick-btn" data-suit="C">♣ Chuồn</button>
+                  <button type="button" class="suit-pick-btn red" data-suit="D">♦ Rô</button>
+                  <button type="button" class="suit-pick-btn red" data-suit="H">♥ Cơ</button>
+                  <button type="button" class="suit-pick-btn" data-suit="S">♠ Bích</button>
+                </div>
+              </div>
+
+              <div class="guess-group">
+                <label>2. Chọn Bậc Của Lá Ẩn (Lá #1 + Độ lệch Hoán vị L/M/H):</label>
+                <div class="rank-btn-row" id="trainer-rank-btns">
+                  <!-- A..K buttons -->
+                </div>
+              </div>
+
+              <div class="stage-cta-bar">
+                <input type="text" id="trainer-player-name" class="stage-input compact-input" placeholder="Biệt danh Pháp sư" maxlength="30" />
+                <button class="btn-cyan-glow" id="btn-trainer-submit" type="button" disabled>⚡ Lật Bài Kiểm Chứng</button>
+              </div>
+
+              <div id="trainer-feedback" class="decode-announcement" hidden></div>
+
+              <!-- Quick Cheat-Sheet Table for Learners -->
+              <div class="cheat-sheet-strip">
+                <span>Bảng nhớ nhanh 3 lá #2-#3-#4 (Quy ước độ lớn: Số nhỏ → lớn, đồng số: ♣ &lt; ♦ &lt; ♥ &lt; ♠):</span>
+                <div class="perm-badges">
+                  <code>L-M-H = +1</code>
+                  <code>L-H-M = +2</code>
+                  <code>M-L-H = +3</code>
+                  <code>M-H-L = +4</code>
+                  <code>H-L-M = +5</code>
+                  <code>H-M-L = +6</code>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================================================================= -->
+      <!-- ACT III: KRUSKAL CONVERGENCE & MAGIC SQUARES                      -->
+      <!-- ================================================================= -->
+      <section class="act-panel" id="act-kruskal">
+        <div class="panel-hero">
+          <div>
+            <span class="eyebrow-tag">ACT III • MARKOV CHAIN COUPLING &amp; CRYPTOGRAPHIC PROPHECY</span>
+            <h2>Hố Đen Ngôn Ngữ Kruskal &amp; Ma Phương Định Mệnh</h2>
+            <p>
+              Những lựa chọn tưởng chừng tự do tuyệt đối của con người lại bị dẫn lối âm thầm về cùng một điểm hội tụ toán học — kèm <strong>Chữ ký băm SHA-256</strong> khóa chặt lời tiên tri trước khi bạn bắt đầu!
+            </p>
+          </div>
+          <div class="hero-controls">
+            <div class="segmented-switch">
+              <button class="seg-btn active" data-act3-sub="kruskal" type="button">📖 Mật Thư Hội Tụ Kruskal</button>
+              <button class="seg-btn" data-act3-sub="squares" type="button">🔢 Bàn Cờ Khóa Tổng &amp; Ma Phương Ramanujan</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- SUBTAB 3A: KRUSKAL MARKOV TEXT -->
+        <div id="act3-kruskal-view" class="two-col-stage">
+          <div class="stage-card">
+            <div class="card-header-row">
+              <div>
+                <h3>Thí Nghiệm Đọc Từ Trong Tâm Trí (Không Cần Chạm Chuột!)</h3>
+                <p class="muted-note">
+                  <strong>Cách chơi:</strong> Nhìn 12 từ đầu tiên có viền vàng, <strong>nghĩ thầm 1 từ bất kỳ</strong>. Đếm số chữ cái của từ đó (không tính dấu câu, VD: <em>"Đêm"</em> = 3 chữ), rồi đếm nhảy tiến thêm đúng bấy nhiêu từ. Lặp lại cho đến khi bước nhảy tiếp theo vượt quá cuối đoạn văn thì dừng lại và giữ chặt từ cuối đó trong đầu!
+                </p>
+              </div>
+            </div>
+
+            <div class="passage-toolbar">
+              <select id="kruskal-passage-select" class="stage-select">
+                <option value="mirror_sanctum">📜 Bản Giao Hưởng Phòng Gương Cổ (Hội tụ 100%)</option>
+                <option value="astral_clockwork">⏳ Mật Thư Đồng Hồ Tinh Tú (Hội tụ 100%)</option>
+                <option value="crimson_tarot">🎴 Lời Nguyền Lá Bài Đỏ Thẫm (Hội tụ 100%)</option>
+                <option value="custom">✍️ Tự Nhập Văn Bản Tiếng Việt Của Bạn...</option>
+              </select>
+              <label class="checkbox-pill" title="Bấm vào 1 từ bất kỳ để máy vẽ đường nhảy kiểm chứng">
+                <input type="checkbox" id="kruskal-trace-toggle" />
+                <span>👆 Chế độ bấm từ dò bước nhảy</span>
+              </label>
+            </div>
+
+            <div id="kruskal-custom-box" class="custom-text-drawer" hidden>
+              <textarea id="kruskal-custom-input" rows="3" class="stage-textarea" placeholder="Dán bất kỳ đoạn văn tiếng Việt nào dài từ 25 đến 120 từ để máy phân tích Xích Markov và niêm phong từ hội tụ..."></textarea>
+              <button class="btn-secondary small-btn" id="btn-kruskal-analyze-custom" type="button">🔬 Phân Tích &amp; Niêm Phong SHA-256</button>
+            </div>
+
+            <div id="kruskal-words-board" class="kruskal-passage-box">
+              <!-- Words rendered here -->
+            </div>
+
+            <div id="kruskal-step-caption" class="trace-caption" hidden></div>
+          </div>
+
+          <div class="stage-side-stack">
+            <!-- WAX SEALED SHA-256 ENVELOPE -->
+            <div class="stage-card prophecy-envelope-card">
+              <div class="wax-seal-header">
+                <span class="wax-emblem">🕯️</span>
+                <div>
+                  <h3>Phong Bì Tiên Tri Đã Niêm Phong Mật Mã</h3>
+                  <span class="muted-note">Khóa băm được tạo TRƯỚC KHI bạn bắt đầu đọc đoạn văn</span>
+                </div>
+              </div>
+
+              <div class="sha-seal-box">
+                <div class="sha-label">SHA-256 COMMITMENT HASH:</div>
+                <code id="kruskal-sha-hash" class="sha-code">--</code>
+              </div>
+
+              <div id="kruskal-sealed-view" class="envelope-body">
+                <p>Khi bạn đã nhảy đến từ cuối cùng trong đầu và chốt đáp án, hãy xé phong bì kiểm chứng!</p>
+                <button class="btn-gold-primary large-cta" id="btn-kruskal-unseal" type="button">
+                  🔓 Xé Niêm Phong Mở Lời Tiên Tri
+                </button>
+              </div>
+
+              <div id="kruskal-unsealed-view" class="envelope-revealed" hidden>
+                <span class="reveal-badge">TỪ CUỐI CÙNG TRONG ĐẦU BẠN LÀ</span>
+                <div class="giant-word-reveal" id="kruskal-revealed-word">--</div>
+                <div class="nonce-proof-box">
+                  <div>Chuỗi gốc mở khóa: <code id="kruskal-reveal-raw">--</code></div>
+                  <button class="btn-secondary small-btn" id="btn-kruskal-verify-sha" type="button">✔ Băm Lại Kiểm Chứng SHA-256</button>
+                  <span id="kruskal-verify-badge" class="verify-ok-tag" hidden></span>
+                </div>
+                <button class="btn-ghost small-btn" id="btn-kruskal-reseal" type="button">🔒 Đóng Lại Chơi Ván Khác</button>
+              </div>
+            </div>
+
+            <!-- X-RAY MARKOV GRAPH -->
+            <div class="stage-card xray-panel" id="xray-kruskal">
+              <div class="xray-header">
+                <span>🔦 HẬU TRƯỜNG: ĐỒ THỊ HỘI TỤ XÍCH MARKOV (KRUSKAL COUPLING)</span>
+                <span class="mono-tag" id="kruskal-convergence-badge">Hội tụ: 100%</span>
+              </div>
+              <p class="xray-explain">
+                Dù khán giả chọn bất kỳ từ nào trong 12 từ đầu tiên, mỗi bước nhảy có độ dài khác nhau sẽ nhanh chóng chạm vào chung một từ trung gian (<strong>Điểm Hợp Lưu / Coupling Node</strong>). Kể từ khoảnh khắc hai quỹ đạo chạm nhau một lần, chúng bị khóa chặt vào cùng một đường ray duy nhất dẫn tới <strong>Từ Hố Đen (Sink Word)</strong>!
+              </p>
+              <div id="kruskal-graph-svg-wrap" class="markov-svg-box"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- SUBTAB 3B: CONSTANT-SUM MATRIX FORCE & RAMANUJAN MAGIC SQUARE -->
+        <div id="act3-squares-view" class="two-col-stage" hidden>
+          <!-- LEFT: 4x4 CONSTANT-SUM FORCE -->
+          <div class="stage-card">
+            <div class="card-header-row">
+              <div>
+                <h3>🎯 Bẫy Tự Do Bàn Cờ 4×4 (24 Kịch Bản — 1 Tổng Duy Nhất)</h3>
+                <p class="muted-note">
+                  Chọn 1 ô bất kỳ → Hàng và cột đi qua ô đó sẽ tự khóa lại. Tiếp tục chọn 3 ô còn lại không trùng hàng/cột (có <code>4! = 24</code> cách chọn hoàn toàn khác nhau), rồi đối chiếu với tổng tiên tri đã niêm phong!
+                </p>
+              </div>
+              <button class="btn-secondary small-btn" id="btn-matrix-new" type="button">🎲 Tạo Bàn Cờ Mới</button>
+            </div>
+
+            <div class="sha-seal-box compact-seal">
+              <span class="sha-label">TỔNG TIÊN TRI ĐÃ KHÓA SHA-256:</span>
+              <code id="matrix-sha-hash">--</code>
+            </div>
+
+            <div id="matrix-force-board" class="matrix-4x4-wrap"></div>
+
+            <div class="matrix-status-bar">
+              <div>Đã chọn: <strong id="matrix-picked-info">0 / 4 ô</strong> | Tổng tạm tính: <strong id="matrix-live-sum">?</strong></div>
+              <button class="btn-gold-primary small-btn" id="btn-matrix-reveal" type="button" disabled>🔓 Mở Phong Ấn Đối Chiếu</button>
+            </div>
+            <div id="matrix-reveal-banner" class="decode-announcement" hidden></div>
+
+            <div class="xray-inline-note xray-panel" id="xray-matrix-inline">
+              <div class="xray-header">
+                <span>🔦 BÍ MẬT ĐẠI SỐ TUYẾN TÍNH: BẢNG CỘNG ẨN M[i,j] = R[i] + C[j]</span>
+              </div>
+              <p class="xray-explain">
+                Thực chất bàn cờ 16 số được sinh từ tổng của 4 số hàng <code>R₀..R₃</code> và 4 số cột <code>C₀..C₃</code> ẩn ở lề! Khi bạn chọn 4 ô sao cho mỗi hàng có đúng 1 ô và mỗi cột có đúng 1 ô, tổng 4 ô luôn bằng <code>(R₀+R₁+R₂+R₃) + (C₀+C₁+C₂+C₃)</code> bất kể bạn đi theo hoán vị nào!
+              </p>
+            </div>
+          </div>
+
+          <!-- RIGHT: PERSONALIZED SUPER-MAGIC SQUARE (RAMANUJAN & TARGET SUM) -->
+          <div class="stage-card">
+            <div class="card-header-row">
+              <div>
+                <h3>✨ Xưởng Đúc Ma Phương Ngày Sinh Ramanujan &amp; Số Định Mệnh</h3>
+                <p class="muted-note">Tạo bùa Ma phương 4×4 cá nhân hóa có Hàng, Cột, Đường chéo, 4 Góc và Tâm 2×2 đều cộng ra đúng ngày sinh hoặc con số may mắn của bạn!</p>
+              </div>
+            </div>
+
+            <div class="segmented-switch full-width-seg">
+              <button class="seg-btn active" data-msq-mode="ramanujan_birthday" type="button">🎂 Ma Phương Ngày Sinh (Hàng Đầu Là Ngày Sinh)</button>
+              <button class="seg-btn" data-msq-mode="target_sum" type="button">🔢 Ma Phương Theo Tổng Bất Kỳ (≥ 34)</button>
+            </div>
+
+            <div id="msq-birthday-inputs" class="msq-input-row">
+              <label>Ngày <input type="number" id="msq-day" value="18" min="1" max="99" class="stage-input num-input" /></label>
+              <label>Tháng <input type="number" id="msq-month" value="11" min="1" max="99" class="stage-input num-input" /></label>
+              <label>Thế kỷ <input type="number" id="msq-century" value="20" min="0" max="99" class="stage-input num-input" /></label>
+              <label>Năm <input type="number" id="msq-year" value="26" min="0" max="99" class="stage-input num-input" /></label>
+              <button class="btn-gold-primary small-btn" id="btn-msq-generate-bday" type="button">⚡ Khắc Ma Phương</button>
+            </div>
+
+            <div id="msq-target-inputs" class="msq-input-row" hidden>
+              <label class="grow-label">Con số Định mệnh muốn ép tổng (34 – 99999):
+                <input type="number" id="msq-target-sum" value="2026" min="34" max="99999" class="stage-input" />
+              </label>
+              <button class="btn-gold-primary small-btn" id="btn-msq-generate-target" type="button">⚡ Khắc Ma Phương</button>
+            </div>
+
+            <div id="magic-square-display" class="magic-square-showcase"></div>
+
+            <div class="msq-inspector-btns" id="msq-highlight-btns">
+              <button type="button" class="mini-pill active" data-hl="row0">Hàng 1</button>
+              <button type="button" class="mini-pill" data-hl="col0">Cột 1</button>
+              <button type="button" class="mini-pill" data-hl="diag1">Chéo Chính</button>
+              <button type="button" class="mini-pill" data-hl="diag2">Chéo Phụ</button>
+              <button type="button" class="mini-pill" data-hl="corners">4 Góc</button>
+              <button type="button" class="mini-pill" data-hl="center">Tâm 2×2</button>
+              <button type="button" class="btn-secondary small-btn" id="btn-msq-export-png">📥 Tải Ảnh Bùa PNG</button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================================================================= -->
+      <!-- ACT IV: MOIRÉ / SCANIMATION BARRIER-GRID STUDIO                   -->
+      <!-- ================================================================= -->
+      <section class="act-panel" id="act-scanimation">
+        <div class="panel-hero">
+          <div>
+            <span class="eyebrow-tag">ACT IV • RONCHI BARRIER-GRID &amp; SPATIAL PHASE MULTIPLEXING</span>
+            <h2>Xưởng Chế Tác Ảo Giác Chuyển Động Moiré / Scanimation</h2>
+            <p>
+              Bức tranh bên dưới thực chất là <strong>100% ảnh tĩnh bất động</strong> được cắt lát đan xen từ 4–6 khung hình. Khi trượt <strong>Tấm Lưới Sọc Đen</strong> đi qua, các khe sáng hẹp lần lượt mở khóa từng pha không gian khiến hình ảnh sống dậy chuyển động mượt mà như phim nhựa!
+            </p>
+          </div>
+          <div class="hero-controls">
+            <button class="btn-secondary" id="btn-scan-export-base" type="button">🖼️ Xuất Ảnh Nền Tĩnh (.PNG)</button>
+            <button class="btn-gold-primary" id="btn-scan-export-mask" type="button">🎞️ Xuất Phim Lưới Đen Trong Suốt (.PNG)</button>
+          </div>
+        </div>
+
+        <div class="two-col-stage scanimation-layout">
+          <!-- LEFT: INTERACTIVE SCANIMATION CANVAS STAGE -->
+          <div class="stage-card canvas-stage-card">
+            <div class="scan-stage-toolbar">
+              <select id="scan-preset-select" class="stage-select">
+                <option value="gallop_horse">🐎 Chiến Mã Phi Nước Đại (Muybridge 6 Pha)</option>
+                <option value="magic_dove">🕊️ Bồ Câu Trắng Tung Cánh (5 Pha)</option>
+                <option value="mystic_clock">⚙️ Bánh Răng Thời Gian &amp; Con Lắc (6 Pha)</option>
+                <option value="beating_heart">💎 Tinh Thể Xung Nhịp Quang Học (5 Pha)</option>
+                <option value="word_morph">✨ Chữ Biến Hình Ma Thuật (ẢO ➔ THUẬT ➔ TÂM ➔ TRÍ)</option>
+                <option value="custom_words">✍️ Tự Tạo Chữ / Biểu Tượng Biến Hình Của Bạn...</option>
+              </select>
+
+              <div class="inline-btns">
+                <button class="btn-cyan-glow small-btn active" id="btn-scan-autoplay" type="button">⏸ Đang Tự Trượt</button>
+                <button class="btn-secondary small-btn" id="btn-scan-peel" type="button">🖐️ Lột Nửa Tấm Phim Soi Ảnh Tĩnh</button>
+              </div>
+            </div>
+
+            <div id="scan-custom-words-bar" class="custom-words-bar" hidden>
+              <input type="text" id="scan-words-input" class="stage-input" value="XIN CHÀO | BÍ MẬT | 2026 | KỲ DIỆU" placeholder="Nhập 3 đến 6 cụm từ ngăn cách bởi dấu | ..." />
+              <button class="btn-gold-primary small-btn" id="btn-scan-build-words" type="button">⚡ Đan Lát Khung Hình</button>
+            </div>
+
+            <div class="scan-canvas-wrapper">
+              <canvas id="scanimation-canvas" width="760" height="400"></canvas>
+              <div class="canvas-hint-pill">🖱️ Kéo chuột ngang trực tiếp trên khung tranh để tự tay trượt tấm phim sọc đen!</div>
+            </div>
+
+            <div class="scan-sliders-grid">
+              <label>
+                <span>Vị trí tấm phim chắn (Pha trượt): <strong id="lbl-scan-offset">0 px</strong></span>
+                <input type="range" id="scan-offset-slider" min="0" max="200" step="0.5" value="0" />
+              </label>
+              <label>
+                <span>Độ rộng khe sáng s: <strong id="lbl-scan-slit">2 px</strong></span>
+                <input type="range" id="scan-slit-slider" min="1" max="5" step="1" value="2" />
+              </label>
+              <label>
+                <span>Tốc độ trượt tự động: <strong id="lbl-scan-speed">1.0x</strong></span>
+                <input type="range" id="scan-speed-slider" min="0.2" max="3.0" step="0.1" value="1.0" />
+              </label>
+              <label>
+                <span>Độ đậm tấm phim chắn: <strong id="lbl-scan-opacity">98%</strong></span>
+                <input type="range" id="scan-opacity-slider" min="0" max="100" step="1" value="98" />
+              </label>
+            </div>
+          </div>
+
+          <!-- RIGHT: INDIVIDUAL FRAMES PREVIEW + X-RAY OPTICS -->
+          <div class="stage-side-stack">
+            <div class="stage-card">
+              <h3>🎞️ Các Khung Hình Gốc Trước Khi Cắt Lát</h3>
+              <p class="muted-note">Hệ thống lấy mẫu tuần hoàn <code>P = K × s</code> pixel: Cứ mỗi chu kỳ <code>P</code>, khung thứ <code>k</code> chỉ giữ lại đúng 1 dải dọc rộng <code>s</code> pixel.</p>
+              <div id="scan-frames-strip" class="frames-preview-grid"></div>
+              <div class="print-guide-box">
+                <strong>💡 Mẹo in ra giấy biểu diễn ngoài đời thật:</strong>
+                <p>Bấm tải 2 file PNG ở góc trên → In <em>Ảnh nền tĩnh</em> lên giấy A4 trắng, và in <em>Phim lưới đen trong suốt</em> lên tấm nhựa chiếu hậu (giấy bóng kính OHP). Đặt chồng lên nhau và kéo nhẹ để bạn bè tròn mắt!</p>
+              </div>
+            </div>
+
+            <div class="stage-card xray-panel" id="xray-scanimation">
+              <div class="xray-header">
+                <span>🔦 HẬU TRƯỜNG QUANG HỌC: TẦN SỐ PHÁCH MOIRÉ &amp; LƯU ẢNH VÕNG MẠC</span>
+                <span class="mono-tag" id="scan-xray-formula">P = 6 × 2px = 12px</span>
+              </div>
+              <p class="xray-explain">
+                Với <code>K</code> khung hình, tấm lưới đen che kín <code>(K − 1)/K</code> diện tích (ví dụ che 83.3% với 6 khung) và chỉ để hở <code>1/K</code> qua các khe hẹp. Não bộ người tự động <strong>nội suy không gian</strong> lấp đầy các vạch đen và kết hợp hiện tượng <strong>chuyển động biểu kiến Beta (Beta Movement)</strong> tạo thành hoạt ảnh liên tục dù bức ảnh gốc không hề thay đổi một pixel nào!
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================================================================= -->
+      <!-- ACT V: VISUAL CORTEX ILLUSIONS, SHEPARD TONE & BIAS BENCHMARK     -->
+      <!-- ================================================================= -->
+      <section class="act-panel" id="act-cortex">
+        <div class="panel-hero">
+          <div>
+            <span class="eyebrow-tag">ACT V • VISUAL &amp; AUDITORY CORTEX HACKING LAB</span>
+            <h2>Phòng Thí Nghiệm Đánh Lừa Võng Mạc &amp; Thang Âm Vô Tận</h2>
+            <p>
+              Đôi mắt và đôi tai không phải máy đo vật lý — chúng là "bộ máy suy đoán" luôn tự ý chỉnh sửa màu sắc, chuyển động, góc nghiêng và cao độ. Hãy tự kiểm chứng bằng <strong>Ống hút RGB, Thước Laser và Máy phát phổ Shepard Tone</strong>!
+            </p>
+          </div>
+        </div>
+
+        <div class="two-col-stage">
+          <!-- LEFT: 4 INTERACTIVE VISUAL CORTEX ILLUSIONS -->
+          <div class="stage-card">
+            <div class="segmented-switch wrap-seg" id="cortex-illusion-tabs">
+              <button class="seg-btn active" data-illusion="adelson" type="button">♟️ Bóng Bàn Cờ Adelson</button>
+              <button class="seg-btn" data-illusion="stepping" type="button">👣 Bước Chân Nhảy Cóc</button>
+              <button class="seg-btn" data-illusion="cafewall" type="button">🧱 Bức Tường Nghiêng Café</button>
+              <button class="seg-btn" data-illusion="mib" type="button">🌌 Điểm Mù Chuyển Động</button>
+            </div>
+
+            <div class="cortex-canvas-wrap">
+              <canvas id="cortex-canvas" width="680" height="380"></canvas>
+              <div class="eyedropper-hud" id="cortex-eyedropper">
+                <span class="color-swatch" id="eyedropper-swatch"></span>
+                <code id="eyedropper-readout">Di chuột lên tranh để đo mã màu Pixel RGB thực tế</code>
+              </div>
+            </div>
+
+            <div id="cortex-controls-bar" class="cortex-controls">
+              <!-- Populated per active illusion -->
+            </div>
+
+            <div id="cortex-explanation-box" class="xray-inline-note xray-panel">
+              <!-- Scientific explanation per active illusion -->
+            </div>
+          </div>
+
+          <!-- RIGHT: SHEPARD TONE AUDIO ILLUSION + CORTEX BIAS BENCHMARK -->
+          <div class="stage-side-stack">
+            <!-- SHEPARD TONE SYNTHESIZER -->
+            <div class="stage-card">
+              <div class="card-header-row">
+                <div>
+                  <h3>🎵 Ảo Giác Thính Giác: Thang Âm Vô Tận Shepard</h3>
+                  <p class="muted-note">Thủ thuật âm thanh kinh điển trong <em>Dunkirk</em>, <em>Interstellar</em> &amp; cầu thang vô tận <em>Mario 64</em> — cao độ tăng lên mãi mãi không bao giờ chạm đỉnh!</p>
+                </div>
+              </div>
+
+              <canvas id="shepard-canvas" width="460" height="150" class="shepard-Visualizer"></canvas>
+
+              <div class="shepard-btns">
+                <button class="btn-gold-primary small-btn" id="btn-shepard-up" type="button">▲ Phát Tăng Vô Tận</button>
+                <button class="btn-cyan-glow small-btn" id="btn-shepard-down" type="button">▼ Phát Rơi Vô Tận</button>
+                <button class="btn-ghost small-btn" id="btn-shepard-stop" type="button" disabled>⏹ Dừng</button>
+              </div>
+              <p class="tiny-note">
+                <strong>Nguyên lý:</strong> Chồng 6 sóng hình sin cách nhau đúng 1 quãng tám (<code>f, 2f, 4f...</code>) trượt dưới một đường bao âm lượng hình chuông Gaussian cố định. Khi âm cao nhất mờ dần biến mất thì âm trầm nhất lặng lẽ trồi lên thay thế!
+              </p>
+            </div>
+
+            <!-- CORTEX BIAS BENCHMARK -->
+            <div class="stage-card">
+              <h3>📐 Bài Đo "Chỉ Số Kháng Ảo Giác" Của Mắt Bạn</h3>
+              <p class="muted-note">Không dùng thước — hãy kéo 2 thanh trượt bên dưới hoàn toàn bằng cảm nhận mắt thường rồi bấm chấm điểm!</p>
+
+              <canvas id="benchmark-canvas" width="460" height="210" class="benchmark-canvas"></canvas>
+
+              <div class="benchmark-sliders">
+                <label>
+                  <span>1. Dịch vạch đỏ chia đôi đoạn thẳng Müller-Lyer sao cho 2 nửa bằng nhau:</span>
+                  <input type="range" id="bm-muller-slider" min="25" max="75" step="0.2" value="42" />
+                </label>
+                <label>
+                  <span>2. Chỉnh kích cỡ tâm cam bên phải (Ebbinghaus) sao cho bằng tâm cam bên trái:</span>
+                  <input type="range" id="bm-ebbinghaus-slider" min="10" max="34" step="0.2" value="17" />
+                </label>
+              </div>
+
+              <div class="stage-cta-bar">
+                <input type="text" id="bm-player-name" class="stage-input compact-input" placeholder="Tên bạn" maxlength="28" />
+                <button class="btn-gold-primary small-btn" id="btn-bm-evaluate" type="button">🎯 Chấm Điểm &amp; Bật Thước Kiểm Chứng</button>
+                <button class="btn-ghost small-btn" id="btn-bm-reset" type="button">Thử Lại</button>
+              </div>
+
+              <div id="bm-result-box" class="decode-announcement" hidden></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================================================================= -->
+      <!-- ACT VI (v2.0): HYBRID SPATIAL-FREQUENCY IMAGE & 3D STEREOGRAM     -->
+      <!-- ================================================================= -->
+      <section class="act-panel" id="act-hybrid">
+        <div class="panel-hero">
+          <div>
+            <span class="eyebrow-tag">ACT VI • MIT SPATIAL-FREQUENCY HYBRID OPTICS &amp; SIRDS 3D</span>
+            <h2>Xưởng Tranh Ảo Giác Lai Tần Số (Einstein–Marilyn) &amp; Tranh 3D Ẩn</h2>
+            <p>
+              Trộn <strong>Tần số không gian cao</strong> của Hình A (nét mảnh, chi tiết sắc) với <strong>Tần số không gian thấp</strong> của Hình B (mảng sáng tối mờ).
+              Khi nhìn sát màn hình bạn chỉ thấy Hình A — nhưng hãy <strong>bước lùi ra xa 2.5–3 mét (hoặc nheo mắt / kéo thanh khoảng cách)</strong>, Hình A sẽ bốc hơi và biến thành Hình B!
+            </p>
+          </div>
+          <div class="hero-controls">
+            <div class="segmented-switch">
+              <button class="seg-btn active" data-act6-sub="hybrid" type="button">🖼️ Tranh Lai Tần Số (Gần A ⇄ Xa B)</button>
+              <button class="seg-btn" data-act6-sub="stereogram" type="button">👁️‍🗨️ Tranh 3D Nhiễu Hạt (Magic-Eye SIRDS)</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- SUBVIEW 6A: HYBRID IMAGE LAB -->
+        <div id="act6-hybrid-view" class="two-col-stage">
+          <div class="stage-card">
+            <div class="scan-stage-toolbar">
+              <select id="hybrid-preset-select" class="stage-select">
+                <option value="sage_smile">👓 Nhìn Gần: Học Giả Đeo Kính Cau Mày ⇄ Lùi Xa 3m: Khuôn Mặt Cười Tỏa Nắng</option>
+                <option value="skull_heart">💀 Nhìn Gần: Đầu Lâu Bí Ẩn ⇄ Lùi Xa 3m: Trái Tim Hồi Sinh</option>
+                <option value="cat_owl">🐱 Nhìn Gần: Mèo Đêm Rình Mồi ⇄ Lùi Xa 3m: Cú Mèo Mắt Tròn</option>
+                <option value="secret_words">🔐 Mật Mã Chữ Hai Cự Ly (Tự Nhập 2 Thông Điệp Gần / Xa)</option>
+                <option value="upload_photos">📷 Tải Lên 2 Bức Ảnh Của Riêng Bạn (Ảnh Gần + Ảnh Xa)...</option>
+              </select>
+              <button class="btn-gold-primary small-btn" id="btn-hybrid-download" type="button">📥 Xuất Ảnh Hybrid (.PNG)</button>
+            </div>
+
+            <div id="hybrid-words-bar" class="custom-words-bar" hidden>
+              <input type="text" id="hybrid-near-word" class="stage-input" value="GIẢ DỐI" placeholder="Chữ nhìn GẦN..." />
+              <input type="text" id="hybrid-far-word" class="stage-input" value="SỰ THẬT" placeholder="Chữ nhìn XA 3m..." />
+              <button class="btn-cyan-glow small-btn" id="btn-hybrid-render-words" type="button">⚡ Trộn Tần Số</button>
+            </div>
+
+            <div id="hybrid-upload-bar" class="custom-words-bar" hidden>
+              <label class="mini-file-btn">📂 Chọn Ảnh Gần (A) <input type="file" id="hybrid-file-near" accept="image/*" hidden /></label>
+              <label class="mini-file-btn">📂 Chọn Ảnh Xa (B) <input type="file" id="hybrid-file-far" accept="image/*" hidden /></label>
+              <span class="muted-note" id="hybrid-upload-status">Chọn đủ 2 ảnh để trộn phổ tự động</span>
+            </div>
+
+            <div class="hybrid-stage-viewport">
+              <div class="hybrid-canvas-frame" id="hybrid-zoom-box">
+                <canvas id="hybrid-main-canvas" width="420" height="420"></canvas>
+              </div>
+            </div>
+
+            <div class="scan-sliders-grid">
+              <label>
+                <span>🔭 Giả lập bước lùi khoảng cách nhìn: <strong id="lbl-hybrid-dist">0.5 mét (Nhìn Gần)</strong></span>
+                <input type="range" id="hybrid-dist-slider" min="0.4" max="4.0" step="0.1" value="0.5" />
+              </label>
+              <label>
+                <span>Độ mờ thông thấp Hình Xa (σ_Low): <strong id="lbl-hybrid-low">11 px</strong></span>
+                <input type="range" id="hybrid-low-slider" min="5" max="22" step="1" value="11" />
+              </label>
+              <label>
+                <span>Bán kính lọc nét Hình Gần (σ_High): <strong id="lbl-hybrid-high">5 px</strong></span>
+                <input type="range" id="hybrid-high-slider" min="2" max="12" step="1" value="5" />
+              </label>
+              <label>
+                <span>Cường độ chi tiết tần số cao (α): <strong id="lbl-hybrid-gain">1.35x</strong></span>
+                <input type="range" id="hybrid-gain-slider" min="0.5" max="2.4" step="0.05" value="1.35" />
+              </label>
+            </div>
+          </div>
+
+          <div class="stage-side-stack">
+            <div class="stage-card">
+              <h3>🔭 Tháp Đa Tỷ Lệ Không Gian (Gaussian Viewing Pyramid)</h3>
+              <p class="muted-note">Cùng một bức ảnh duy nhất bên trái khi thu nhỏ góc nhìn trên võng mạc từ cự ly 0.5m → 1.5m → 3.0m → 4.5m:</p>
+              <div class="pyramid-strip" id="hybrid-pyramid-strip"></div>
+            </div>
+
+            <div class="stage-card xray-panel" id="xray-hybrid">
+              <div class="xray-header">
+                <span>🔦 HẬU TRƯỜNG XỬ LÝ TÍN HIỆU 2 CHIỀU: H = G_σL(B) + α · [A − G_σH(A)]</span>
+                <span class="mono-tag">CSF Bandpass</span>
+              </div>
+              <p class="xray-explain">
+                Hàm nhạy tương phản của mắt người (<strong>Contrast Sensitivity Function</strong>) hoạt động như bộ lọc thông dải theo chu kỳ trên mỗi độ góc nhìn. Ở gần, kênh tần số cao của não chiếm quyền chi phối; khi lùi xa 3 mét, các nếp nét mảnh vượt quá ngưỡng phân giải của tế bào nón vùng hố trung tâm, để lộ hoàn toàn bức ảnh tần số thấp ẩn bên dưới!
+              </p>
+              <div class="hybrid-components-row" id="hybrid-xray- pair">
+                <div class="comp-box">
+                  <canvas id="hybrid-high-preview" width="160" height="160"></canvas>
+                  <span>Kênh Cao Tần: A − G(A)</span>
+                </div>
+                <div class="comp-box">
+                  <canvas id="hybrid-low-preview" width="160" height="160"></canvas>
+                  <span>Kênh Hạ Tần: G(B)</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- SUBVIEW 6B: 3D AUTOSTEREOGRAM (MAGIC EYE + X-RAY DECODER) -->
+        <div id="act6-stereogram-view" class="two-col-stage" hidden>
+          <div class="stage-card">
+            <div class="scan-stage-toolbar">
+              <select id="stereo-shape-select" class="stage-select">
+                <option value="star3d">⭐ Ngôi Sao Năm Cánh Nổi Khối 3D</option>
+                <option value="torus3d">🍩 Vòng Nhẫn Không Gian (3D Torus Ring)</option>
+                <option value="heart3d">💖 Trái Tim Pha Lê Nổi Bậc Thang</option>
+                <option value="text3d">🔤 Mật Mã Chữ Nổi 3D Tùy Chỉnh...</option>
+              </select>
+              <div class="inline-btns">
+                <button class="btn-cyan-glow small-btn" id="btn-stereo-decode" type="button">🔓 Bật Kính Giải Mã X-Ray Tự Động</button>
+                <button class="btn-secondary small-btn" id="btn-stereo-export" type="button">📥 Xuất PNG</button>
+              </div>
+            </div>
+
+            <div id="stereo-text-bar" class="custom-words-bar" hidden>
+              <input type="text" id="stereo-custom-text" class="stage-input" value="2026" maxlength="6" placeholder="Nhập 2-6 ký tự in hoa..." />
+              <button class="btn-gold-primary small-btn" id="btn-stereo-render-text" type="button">⚡ Đúc Khối 3D</button>
+            </div>
+
+            <div class="stereo-fusion-guide">
+              <span>Nhìn xuyên ra xa sau màn hình sao cho 2 chấm vàng bên dưới chập thành 3 chấm:</span>
+              <div class="fusion-dots-bar">
+                <span class="f-dot"></span>
+                <span class="f-dot"></span>
+              </div>
+            </div>
+
+            <div class="cortex-canvas-wrap">
+              <canvas id="stereogram-canvas" width="660" height="360"></canvas>
+            </div>
+          </div>
+
+          <div class="stage-side-stack">
+            <div class="stage-card xray-panel">
+              <div class="xray-header">
+                <span>🔦 NGUYÊN LÝ THỊ GIÁC LẬP THỂ HAI MẮT (BINOCULAR DISPARITY)</span>
+                <span class="mono-tag">Chu kỳ S = 110px</span>
+              </div>
+              <p class="xray-explain">
+                Dù trông như nhiễu hạt ngẫu nhiên vô nghĩa, mỗi điểm ảnh <code>(x, y)</code> thực chất bị ràng buộc lặp lại theo chu kỳ <code>S − Δd(x,y)</code>. Khi hai mắt hội tụ lệch đi 1 chu kỳ <code>S</code>, sự chênh lệch pha ngang <code>Δd</code> đánh lừa vỏ não thị giác V1/V2 tái tạo độ sâu 3 chiều thật sự! Nếu bạn khó nhìn lác/xuyên mắt, bấm nút <strong>"Bật Kính Giải Mã X-Ray Tự Động"</strong> để thuật toán tương quan chéo tự động bóc lớp hình 3D ra khỏi nhiễu hạt!
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================================================================= -->
+      <!-- ACT VII (v2.0): PARRONDO'S PARADOX, GILBREATH & FARO SHUFFLE      -->
+      <!-- ================================================================= -->
+      <section class="act-panel" id="act-paradox">
+        <div class="panel-hero">
+          <div>
+            <span class="eyebrow-tag">ACT VII • PARRONDO RATCHET, GILBREATH INVARIANT &amp; DIACONIS FARO</span>
+            <h2>Sòng Bài Nghịch Lý Xác Suất &amp; Phép Tráo Bài Bất Biến</h2>
+            <p>
+              Khám phá những định lý làm sụp đổ trực giác con người: Ghép <strong>2 trò chơi cầm chắc thua lỗ</strong> thành cỗ máy sinh lời dương (Nghịch lý Parrondo), cho khán giả <strong>chẻ bài hỗn loạn mù quáng</strong> mà cấu trúc tứ quý chất vẫn bất biến 100% (Định lý Gilbreath), và điều khiển nhị phân Faro!
+            </p>
+          </div>
+          <div class="hero-controls">
+            <div class="segmented-switch">
+              <button class="seg-btn active" data-act7-sub="parrondo" type="button">📈 Nghịch Lý Parrondo (Thua+Thua=Thắng)</button>
+              <button class="seg-btn" data-act7-sub="gilbreath" type="button">🃏 Định Lý Bài Gilbreath</button>
+              <button class="seg-btn" data-act7-sub="faro" type="button">🧮 Nhị Phân Faro Shuffle</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- SUBVIEW 7A: PARRONDO'S PARADOX -->
+        <div id="act7-parrondo-view" class="two-col-stage">
+          <div class="stage-card">
+            <div class="card-header-row">
+              <div>
+                <h3>📈 Mô Phỏng Sòng Bài Nghịch Lý Parrondo (Monte-Carlo Đa Quỹ Đạo)</h3>
+                <p class="muted-note">
+                  • <strong>Bàn A:</strong> Tung 1 đồng xu thiên vị nhà cái (Thắng <code>49.5%</code> → Chơi riêng chắc chắn LỖ!).<br/>
+                  • <strong>Bàn B:</strong> Nếu vốn chia hết cho 3 tung xu tệ (<code>9.5%</code> thắng), ngược lại tung xu xịn (<code>74.5%</code> thắng) → Chơi riêng cũng LỖ NẶNG vì kẹt bẫy chia hết cho 3!<br/>
+                  • <strong>Kết hợp A-A-B-B:</strong> Xen kẽ 2 bàn thua này lại tạo thành <strong>CỖ MÁY THẮNG TIỀN DƯƠNG!</strong>
+                </p>
+              </div>
+              <button class="btn-gold-primary small-btn" id="btn-parrondo-run" type="button">🎲 Chạy Mô Phỏng Mới</button>
+            </div>
+
+            <div class="cortex-canvas-wrap">
+              <canvas id="parrondo-chart-canvas" width="680" height="320"></canvas>
+            </div>
+
+            <div class="scan-sliders-grid">
+              <label>
+                <span>Độ thiên vị nhà cái ε: <strong id="lbl-parrondo-eps">0.005</strong></span>
+                <input type="range" id="parrondo-eps-slider" min="0.002" max="0.014" step="0.001" value="0.005" />
+              </label>
+              <label>
+                <span>Số ván đặt cược liên tiếp: <strong id="lbl-parrondo-steps">200 ván</strong></span>
+                <input type="range" id="parrondo-steps-slider" min="80" max="400" step="20" value="200" />
+              </label>
+            </div>
+          </div>
+
+          <div class="stage-side-stack">
+            <div class="stage-card" id="parrondo-kpi-box">
+              <!-- Populated with exact profit comparison -->
+            </div>
+
+            <div class="stage-card xray-panel">
+              <div class="xray-header">
+                <span>🔦 HẬU TRƯỜNG XÍCH MARKOV Z₃ &amp; BÁNH CÓC BROWN FEYNMAN</span>
+                <span class="mono-tag">Stationary π</span>
+              </div>
+              <div id="parrondo-xray-math" class="xray-explain"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- SUBVIEW 7B: GILBREATH'S CARD PRINCIPLE -->
+        <div id="act7-gilbreath-view" class="two-col-stage" hidden>
+          <div class="stage-card">
+            <div class="card-header-row">
+              <div>
+                <h3>🃏 Định Lý Hỗn Loạn Gilbreath (Norman Gilbreath, 1958)</h3>
+                <p class="muted-note">
+                  Bộ bài 24 lá xếp tuần hoàn <code>♣ ♦ ♥ ♠</code>. Bạn cắt ở bất kỳ đâu, đếm ngửa phần trên xuống bàn (làm đảo chiều phần đó), rồi cho khán giả <strong>chẻ bài Riffle Shuffle hoàn toàn ngẫu nhiên</strong>!
+                </p>
+              </div>
+              <button class="btn-gold-primary small-btn" id="btn-gilbreath-shuffle" type="button">🌪️ Cắt &amp; Chẻ Bài Hỗn Loạn</button>
+            </div>
+
+            <div class="scan-sliders-grid" style="margin-bottom:14px;">
+              <label>
+                <span>Vị trí khán giả cắt cỗ bài: <strong id="lbl-gilbreath-cut">Lá thứ 11 / 24</strong></span>
+                <input type="range" id="gilbreath-cut-slider" min="2" max="22" step="1" value="11" />
+              </label>
+            </div>
+
+            <div id="gilbreath-quartets-grid" class="quartets-showcase"></div>
+          </div>
+
+          <div class="stage-side-stack">
+            <div class="stage-card xray-panel">
+              <div class="xray-header">
+                <span>🔦 CHỨNG MINH QUY NẠP GILBREATH: TẠI SAO HỖN LOẠN LẠI SINH TRẬT TỰ?</span>
+              </div>
+              <p class="xray-explain">
+                Khi cắt cỗ bài tuần hoàn và đảo ngược nửa đầu, lá đầu tiên của chồng Trái và lá đầu tiên của chồng Phải luôn tiến về hai hướng ngược nhau trên chu trình <code>♣ → ♦ → ♥ → ♠</code>. Do đó, bất kể khán giả thả 4 lá đầu tiên theo tỷ lệ nào (<code>4-0, 3-1, 2-2, 1-3, 0-4</code>), 4 lá đó luôn quét thành một cửa sổ 4 vị trí liên tiếp trên vòng tròn chu kỳ — tức <strong>bắt buộc chứa đủ 4 chất khác nhau 100%</strong>!
+              </p>
+              <div id="gilbreath-trace-box" class="steps-trace-list"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- SUBVIEW 7C: DIACONIS FARO BINARY CONTROLLER -->
+        <div id="act7-faro-view" class="two-col-stage" hidden>
+          <div class="stage-card">
+            <div class="card-header-row">
+              <div>
+                <h3>🧮 Máy Tính Điều Khiển Cỗ Bài Nhị Phân Faro (Persi Diaconis)</h3>
+                <p class="muted-note">Đưa bất kỳ lá bài nào tới đúng vị trí khán giả gọi tên (0–51) chỉ bằng 5–6 lần chẻ bài đan xen hoàn hảo <code>Out-Faro (Bit 0)</code> và <code>In-Faro (Bit 1)</code>!</p>
+              </div>
+            </div>
+
+            <div class="msq-input-row">
+              <label>Vị trí xuất phát (0 = Đỉnh bộ bài):
+                <input type="number" id="faro-start-pos" class="stage-input num-input" min="0" max="51" value="0" />
+              </label>
+              <label>Vị trí đích khán giả yêu cầu (0 – 51):
+                <input type="number" id="faro-target-pos" class="stage-input num-input" min="0" max="51" value="29" />
+              </label>
+              <button class="btn-gold-primary small-btn" id="btn-faro-solve" type="button">⚡ Lập Lộ Trình Nhị Phân</button>
+            </div>
+
+            <div id="faro-timeline-box" class="steps-trace-list" style="margin-top:14px;"></div>
+          </div>
+
+          <div class="stage-side-stack">
+            <div class="stage-card xray-panel">
+              <div class="xray-header">
+                <span>🔦 ĐẠI SỐ HOÁN VỊ MOD 51 &amp; MOD 53</span>
+                <span class="mono-tag">2⁸ ≡ 1 (mod 51)</span>
+              </div>
+              <p class="xray-explain">
+                • <strong>Out-Faro (Bit 0):</strong> Giữ nguyên lá đầu tiên ở đỉnh ⇒ vị trí mới <code>p' = 2p (mod 51)</code> (dịch trái nhị phân + chèn bit 0!). Đặc biệt chỉ cần đúng <strong>8 lần Out-Faro</strong> là toàn bộ 52 lá bài tự quay về thứ tự nguyên bản ban đầu!<br/>
+                • <strong>In-Faro (Bit 1):</strong> Đẩy lá đầu xuống vị trí số 1 ⇒ vị trí mới <code>p' = (2p + 1) mod 53</code> (dịch trái nhị phân + cộng bit 1!). Vì vậy đổi vị trí đích từ đỉnh ra hệ nhị phân chính là công thức chẻ bài!
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================================================================= -->
+      <!-- ACT VIII (v2.0): MICRO-HESITATION CIT POLYGRAPH                   -->
+      <!-- ================================================================= -->
+      <section class="act-panel" id="act-polygraph">
+        <div class="panel-hero">
+          <div>
+            <span class="eyebrow-tag">ACT VIII • COGNITIVE MICRO-HESITATION &amp; CONCEALED INFORMATION TEST (CIT-RT)</span>
+            <h2>Máy Đọc Độ Trễ Phản Xạ Vi Mô &amp; Dấu Vân Tay Lưỡng Lự</h2>
+            <p>
+              Dựa trên nghiệp vụ tâm lý học pháp y Nhật Bản (<em>Concealed Information Test</em>): Bạn chọn thầm 1 cổ vật trong đầu (<strong>không bấm chọn</strong>) và cố gắng phủ nhận tất cả. Khi cổ vật thật vụt qua màn hình, vỏ não trước trán tự động khựng lại <strong>30–110 mili-giây</strong> để kìm nén sự thật — đủ để cảm biến <code>0.1ms</code> bắt sống!
+            </p>
+          </div>
+        </div>
+
+        <div class="two-col-stage">
+          <div class="stage-card spotlight-card">
+            <!-- PHASE 1: SECRET COMMIT IN HEAD -->
+            <div id="cit-phase-setup">
+              <h3>Bước 1: Chọn Thầm 1 Cổ Vật Bạn Muốn Giấu Kín Trong Đầu</h3>
+              <p class="muted-note">Hãy nhìn kỹ 6 cổ vật bên dưới, tự nhẩm tên và hình dáng của <strong>1 cổ vật duy nhất</strong> trong tâm trí (TUYỆT ĐỐI KHÔNG BẤM VÀO NÓ!):</p>
+
+              <div class="cit-suspects-showcase" id="cit-suspects-grid"></div>
+
+              <div class="cit-rule-banner">
+                <strong>📋 Quy tắc thẩm vấn phản xạ (21 chớp hình liên hoàn):</strong><br/>
+                • Bấm nút <code>[A] TÔI KHÔNG GIẤU</code> với <strong>tất cả 6 cổ vật trên</strong> (kể cả cổ vật bạn đang giấu — hãy cố nói dối thật nhanh và lạnh lùng!).<br/>
+                • Chỉ bấm nút <code>[L] CHUÔNG KIỂM TRA 🔔</code> khi màn hình hiện <strong>🔔 Chuông Bạc</strong> (nhằm bắt buộc mắt bạn phải nhìn và nhận diện từng hình trước khi bấm!).
+              </div>
+
+              <div class="stage-cta-bar">
+                <input type="text" id="cit-player-name" class="stage-input compact-input" placeholder="Tên người chịu thẩm vấn" maxlength="28" />
+                <button class="btn-gold-primary large-cta" id="btn-cit-start" type="button">
+                  ⚡ Đã Nhớ Kỹ Trong Đầu — Bắt Đầu 21 Chớp Thẩm Vấn!
+                </button>
+              </div>
+            </div>
+
+            <!-- PHASE 2: RAPID-FIRE STIMULUS ARENA -->
+            <div id="cit-phase-arena" hidden>
+              <div class="card-header-row">
+                <span>Tiến độ thẩm vấn: <strong id="cit-progress-text">1 / 21</strong></span>
+                <span class="mono-tag" id="cit-live-rt-tag">Độ phân giải: 0.1ms</span>
+              </div>
+
+              <div class="cit-stimulus-stage" id="cit-stimulus-box">
+                <div class="cit-flash-icon" id="cit-flash-icon">⏳</div>
+                <div class="cit-flash-label" id="cit-flash-label">CHUẨN BỊ...</div>
+              </div>
+
+              <div class="cit-response-btns">
+                <button type="button" class="btn-cit-deny" id="btn-cit-left">
+                  <span class="key-hint">Phím A</span>
+                  <strong>✕ TÔI KHÔNG GIẤU</strong>
+                  <small>(Bấm cho cả 6 cổ vật)</small>
+                </button>
+                <button type="button" class="btn-cit-control" id="btn-cit-right">
+                  <span class="key-hint">Phím L</span>
+                  <strong>🔔 CHUÔNG KIỂM TRA</strong>
+                  <small>(Chỉ bấm khi thấy Chuông)</small>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div class="stage-side-stack">
+            <div class="stage-card verdict-card" id="cit-verdict-panel">
+              <div id="cit-verdict-placeholder">
+                <div class="crystal-orb">🧠</div>
+                <h4>Máy Đo Điện Tâm Trí Phản Xạ Đang Chờ</h4>
+                <p>Hãy chọn thầm 1 cổ vật và hoàn thành bài test phản xạ 25 giây bên trái để xem não bộ có phản bội bạn hay không!</p>
+              </div>
+              <div id="cit-verdict-result" hidden>
+                <span class="reveal-badge">PHÁT HIỆN DẤU HIỆU ỨC CHẾ VỎ NÃO</span>
+                <div class="giant-word-reveal" id="cit-top-suspect-title">--</div>
+                <p id="cit-top-suspect-desc" class="verdict-desc">--</p>
+                <canvas id="cit-polygraph-canvas" width="460" height="210" class="benchmark-canvas"></canvas>
+                <button class="btn-secondary small-btn" id="btn-cit-retry" type="button" style="margin-top:10px;">🔄 Thẩm Vấn Lại Ván Mới</button>
+              </div>
+            </div>
+
+            <div class="stage-card xray-panel">
+              <div class="xray-header">
+                <span>🔦 CƠ CHẾ THẦN KINH HỌC: SÓNG P300 &amp; ỨC CHẾ PHẢN XẠ N200</span>
+                <span class="mono-tag">Robust MAD Z-Score</span>
+              </div>
+              <p class="xray-explain">
+                Khi mắt nhận ra "vật phẩm có ý nghĩa cá nhân đang che giấu", mạng lưới chú ý tự động kích hoạt xung nhận diện <strong>P300</strong> và xung đột ức chế vận động <strong>N200</strong> ở hồi đai trước (Anterior Cingulate Cortex). Hệ thống chuẩn hóa bằng trung vị độ lệch tuyệt đối (<code>MAD Z-Score</code>) kết hợp độ rung quỹ đạo chuột để tách tín hiệu thật khỏi nhiễu mỏi tay!
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- =================================================================== -->
+    <!-- MODAL 1: LIVE TWO-DEVICE STAGE ROOM                                 -->
+    <!-- =================================================================== -->
+    <div class="modal-backdrop" id="modal-live-stage" hidden>
+      <div class="modal-dialog">
+        <div class="modal-header">
+          <h3>📡 Sân Khấu Đôi — Biểu Diễn Thần Giao Cách Cảm Giữa 2 Màn Hình</h3>
+          <button class="modal-close" data-close-modal="modal-live-stage" type="button">✕</button>
+        </div>
+        <div class="modal-body">
+          <p>
+            Mở một phòng diễn thời gian thực (Realtime SSE): Bạn giữ màn hình <strong>Pháp sư</strong> trên máy tính, và gửi đường dẫn phòng cho bạn bè mở trên tab khác hoặc điện thoại cùng mạng Wi-Fi!
+          </p>
+          <div class="live-room-actions">
+            <button class="btn-gold-primary" id="btn-create-room" type="button">✨ Tạo Mã Phòng Diễn Mới</button>
+            <div class="join-room-inline">
+              <input type="text" id="input-join-room" class="stage-input compact-input" placeholder="Nhập mã 4 ký tự" maxlength="4" />
+              <button class="btn-secondary" id="btn-join-room" type="button">Kết Nối Phòng</button>
+            </div>
+          </div>
+          <div id="live-room-details" class="live-room-card" hidden>
+            <div>Mã phòng đang hoạt động: <strong id="modal-room-code" class="gold-text">----</strong> (<span id="modal-room-viewers">1</span> thiết bị kết nối)</div>
+            <div class="share-url-row">
+              <input type="text" id="modal-room-url" class="stage-input" readonly />
+              <button class="btn-cyan-glow small-btn" id="btn-copy-room-url" type="button">📋 Sao Chép Link</button>
+            </div>
+            <div id="live-room-feed" class="live-events-log">
+              <div class="log-line">Đang lắng nghe tín hiệu thần giao cách cảm từ khán giả...</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- =================================================================== -->
+    <!-- MODAL 2: HALL OF RECORDS (SQLITE LEADERBOARD)                       -->
+    <!-- =================================================================== -->
+    <div class="modal-backdrop" id="modal-records" hidden>
+      <div class="modal-dialog wide-dialog">
+        <div class="modal-header">
+          <h3>🏆 Bảng Vinh Danh Pháp Sư &amp; Hồ Sơ Não Bộ (SQLite)</h3>
+          <button class="modal-close" data-close-modal="modal-records" type="button">✕</button>
+        </div>
+        <div class="modal-body" id="records-modal-content">
+          <!-- Populated from /api/records -->
+        </div>
+      </div>
+    </div>
+
+    <!-- =================================================================== -->
+    <!-- MODAL 3: STAGE MAGICIAN PLAYBOOK                                    -->
+    <!-- =================================================================== -->
+    <div class="modal-backdrop" id="modal-guide" hidden>
+      <div class="modal-dialog wide-dialog">
+        <div class="modal-header">
+          <h3>🎩 Cẩm Nang Biểu Diễn &amp; Nguyên Lý Thủ Thuật ArcanaMind</h3>
+          <button class="modal-close" data-close-modal="modal-guide" type="button">✕</button>
+        </div>
+        <div class="modal-body guide-grid">
+          <div class="guide-item">
+            <h4>🔮 1. Mã Sửa Lỗi Hamming (Đoán Số + Bắt Nói Dối)</h4>
+            <p>Ứng dụng trực tiếp lý thuyết thông tin của Richard Hamming (Bell Labs, 1950). Dù khán giả cố tình trả lời sai 1 lá bài, vector dư <code>S = H · rᵀ (mod 2)</code> vẫn chỉ đúng vị trí lá bài bị nói dối và khôi phục con số gốc!</p>
+          </div>
+          <div class="guide-item">
+            <h4>🃏 2. Thủ Thuật 5 Lá Bài Fitch Cheney</h4>
+            <p>Kết hợp 3 viên ngọc toán học rời rạc: Nguyên lý Chuồng bồ câu (5 lá / 4 chất), Số học đồng dư Modulo 13 (khoảng cách ≤ 6 chiều kim đồng hồ) và 6 hoán vị của 3 lá bài còn lại (<code>3! = 6</code>). Bạn có thể luyện trong mục <em>Luyện Nghề Pháp Sư</em> để diễn bằng bộ bài thật!</p>
+          </div>
+          <div class="guide-item">
+            <h4>📜 3. Hố Đen Kruskal &amp; Bùa Ma Phương Ramanujan</h4>
+            <p>Các quỹ đạo đếm chữ cái độc lập tự động hợp lưu như các nhánh sông đổ về một dòng chính (Markov Chain Coupling). Mọi lời tiên tri đều được khóa bằng hàm băm mật mã <code>SHA-256</code> trước khi ván diễn bắt đầu.</p>
+          </div>
+          <div class="guide-item">
+            <h4>🎞️ 4. Scanimation &amp; Đánh Lừa Vỏ Não Thị Giác</h4>
+            <p>Tự chế tác tranh sọc quang học Moiré xuất file in thật trên giấy A4 + phim nhựa trong suốt, đồng thời đo lường chính xác mức độ não bộ của bạn bị đánh lừa bởi bóng đổ Adelson, Müller-Lyer và thang âm Shepard!</p>
+          </div>
+          <div class="guide-item">
+            <h4>🖼️ 5. Tranh Lai Tần Số (Einstein–Marilyn) &amp; 3D SIRDS</h4>
+            <p>Trộn phổ không gian cao của Hình A với phổ không gian thấp của Hình B: nhìn gần chỉ thấy A, bước lùi 3m biến thành B! Đi kèm máy đúc tranh nhiễu hạt 3D Autostereogram có kính giải mã X-Ray tự động.</p>
+          </div>
+          <div class="guide-item">
+            <h4>🎰 6. Nghịch Lý Parrondo, Gilbreath &amp; Polygraph CIT</h4>
+            <p>Ghép 2 trò cá cược cầm chắc thua lỗ thành chiến lược thắng lớn nhờ Bánh cóc Brown, bảo toàn bộ tứ chất bài sau cú chẻ Riffle hỗn loạn, và bắt sống vật giấu trong đầu qua độ trễ ức chế phản xạ <code>0.1ms</code>!</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="toast-container" class="toast-stack" aria-live="polite"></div>
+  </div>
+
+  <script src="/illusions.js"></script>
+  <script src="/v2_acts.js"></script>
+  <script src="/app.js"></script>
+</body>
+</html>

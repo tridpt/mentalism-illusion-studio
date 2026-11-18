@@ -1,0 +1,22 @@
+{
+  "name": "mentalism-illusion-studio",
+  "version": "2.0.0",
+  "description": "ArcanaMind v2.0 — Đại Sân Khấu 8 Màn Ảo Thuật Toán Học, Đọc Vị Phản Xạ Vi Mô (Hamming, Fitch Cheney, Kruskal, CIT-RT Polygraph), Nghịch Lý Sòng Bài Parrondo/Gilbreath/Faro & Xưởng Tranh Lai Tần Số / Scanimation / 3D SIRDS (Port 4155)",
+  "main": "server.js",
+  "scripts": {
+    "start": "node --experimental-sqlite --no-warnings server.js",
+    "test": "node --experimental-sqlite --no-warnings --test tests/studio.test.js"
+  },
+  "keywords": [
+    "mentalism",
+    "hamming-error-correcting-code",
+    "fitch-cheney-five-card-trick",
+    "kruskal-count-markov",
+    "scanimation-moire-kinegram",
+    "optical-illusions",
+    "shepard-tone",
+    "ramanujan-magic-square"
+  ],
+  "author": "AI_App Ecosystem",
+  "license": "MIT"
+}
